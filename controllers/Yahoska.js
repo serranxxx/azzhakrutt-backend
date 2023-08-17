@@ -11,7 +11,7 @@ const newYahoska = async (req, res = response) => {
 
         res.status(201).json({
             ok: true,
-            msg: 'Item uploaded',
+            msg: 'Yahoska uploaded',
         })
     } catch (error) {
         res.status(500).json({
