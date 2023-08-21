@@ -16,7 +16,7 @@ app.use(express.static('public'))
 //Lecutra y parseo del body
 app.use(express.json())
 // Rutas
-app.use('/api/auth', require('./routes/auth'))
+app.use('/api/auth', require('./routes/routeAuth'))
 app.use('/api/sher', require('./routes/routeSheratan'))
 app.use('/api/nass', require('./routes/routeNasseri'))
 app.use('/api/yaho', require('./routes/routeYahoska'))
