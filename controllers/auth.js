@@ -65,11 +65,7 @@ const login = async (req, res = response) => {
         res.json({
             ok: true,
             msg: 'Valid user',
-            data: {
-                // uid: usuario.id,
-                Name: usuario.Name
-                // Token: token
-            }
+            data: usuario
         })
 
     } catch (error) {
