@@ -8,7 +8,7 @@ const { check } = require('express-validator')
 const { validarCampos } = require('../middleware/validar-campos')
 const router = Router()
 
-const { newBite, getBite, editBite } = require('../controllers/Bite')
+const { newBite, getBite, editBite, deleteBite } = require('../controllers/Bite')
 
 router.post(
     '/newBite', newBite)
@@ -18,5 +18,8 @@ router.get(
 
 router.post(
     '/editBite/:id', editBite)
+
+router.delete(
+    '/deleteBite/:id', deleteBite)
 
 module.exports = router

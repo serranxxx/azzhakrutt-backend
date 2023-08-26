@@ -75,9 +75,39 @@ const editBite = async (req, res = response) => {
     }
 };
 
+const deleteBite = async (req, res = response) => {
+    try {
+        const itemId = req.params.id; // Obtener el ID del parámetro de la URL
+
+        // Buscar y eliminar el documento por su ID
+        const deletedItem = await Bite.findByIdAndDelete(itemId);
+
+        if (!deletedItem) {
+            return res.status(404).json({
+                ok: false,
+                msg: 'Item not found',
+            });
+        }
+
+        return res.json({
+            ok: true,
+            msg: 'Item deleted',
+            deletedItem,
+        });
+    } catch (error) {
+        console.error('Error:', error);
+        return res.status(500).json({
+            ok: false,
+            msg: 'Internal server error',
+        });
+    }
+};
+
+
 
 module.exports = {
     newBite, 
     getBite,
-    editBite
+    editBite,
+    deleteBite
 }
